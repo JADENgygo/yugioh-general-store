@@ -564,14 +564,14 @@ document.addEventListener('DOMContentLoaded', () => {
 					return;
 				}
 				this.opened = true;
-				this.cardStates[index] = 'front';
+				this.$set(this.cardStates, index, 'front');
 				this.result = this.descriptions[this.cardIndices[index]];
 			},
 			reset: function() {
 				this.cardIndices = [0, 1, 2, 3, 4, 5].sort((a, b) => Math.random() - 0.5);
 				this.opened = false;
 				for (let i = 0; i < this.cardStates.length; ++i) {
-					this.cardStates[i] = 'back';
+					this.$set(this.cardStates, i, 'back');
 				}
 			}
 		},
