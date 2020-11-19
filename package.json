@@ -7,7 +7,7 @@
     "build:debug": "npm run copy && webpack --mode=development",
     "watch": "npm run copy && webpack --mode=development --watch",
     "start": "npm run copy && webpack serve --mode=development",
-	"copy": "xcopy public dist /E /Y"
+	"copy": "cp -r public dist"
   },
   "private": true,
   "repository": {
