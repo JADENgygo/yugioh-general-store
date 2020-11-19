@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build:release": "webpack --mode=production",
-    "build:debug": "webpack --mode=development",
-    "watch": "webpack --mode=development --watch",
-    "start": "webpack serve --mode=development"
+    "build:release": "npm run copy && webpack --mode=production",
+    "build:debug": "npm run copy && webpack --mode=development",
+    "watch": "npm run copy && webpack --mode=development --watch",
+    "start": "npm run copy && webpack serve --mode=development",
+	"copy": "xcopy public dist /E /Y"
   },
   "private": true,
   "repository": {
