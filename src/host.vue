@@ -57,6 +57,7 @@
 	</div>
 </template>
 <script>
+import UIkit from 'uikit';
 export default {
 	mounted: function() {
 		window.addEventListener('resize', () => this.pc = window.matchMedia("(min-width: 768.02px)").matches);
