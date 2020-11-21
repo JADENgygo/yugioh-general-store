@@ -5,7 +5,7 @@ module.exports = {
 	entry: './src/app.js',
 	output: {
 		path: path.resolve(__dirname, './dist/js'),
-		filename: "app.js"
+		filename: 'app.js'
 	},
 	module: {
 		rules: [
@@ -27,6 +27,13 @@ module.exports = {
 				loader: 'babel-loader',
 				options: {
 					presets: ['@babel/preset-env']
+				}
+			},
+			{
+				test: /\.webp$/,
+				loader: 'url-loader',
+				options: {
+					esModule: false
 				}
 			}
 		]

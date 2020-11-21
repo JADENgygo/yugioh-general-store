@@ -2,7 +2,7 @@
 	<div class="uk-container">
 		<div uk-grid class="uk-grid-small uk-child-width-1-3">
 			<div v-for="i in 6">
-				<img v-bind:src="'img/card_' + cardStates[i - 1] + cardIndices[i - 1] + '.webp'" v-on:click="openCard(i - 1)">
+				<img v-bind:src="cardPaths[cardIndices[i - 1]]" v-on:click="openCard(cardIndices[i - 1])">
 			</div>
 		</div>
 		<div class="uk-margin-top" v-if="opened">
@@ -16,6 +16,8 @@
 export default {
 	data: function() {
 		return {
+			//frontCardPaths: [require('./img/card_front0.webp'), require('./img/card_front1.webp'), require('./img/card_front2.webp'), require('./img/card_front3.webp'), require('./img/card_front4.webp'), require('./img/card_front5.webp')],
+			cardPaths: [require('./img/card_back0.webp'), require('./img/card_back1.webp'), require('./img/card_back2.webp'), require('./img/card_back3.webp'), require('./img/card_back4.webp'), require('./img/card_back5.webp')],
 			cardIndices: [0, 1, 2, 3, 4, 5].sort((a, b) => Math.random() - 0.5),
 			opened: false,
 			descriptions: [
@@ -50,7 +52,6 @@ export default {
 				 'item': 'ラッキーアイテムは、革靴。',
 				 'advice': 'ライバルに差をつけられちゃうかも！がんばれ！'}
 			],
-			cardStates: ['back', 'back', 'back', 'back', 'back', 'back'],
 			result: {},
 		};
 	},
@@ -60,14 +61,14 @@ export default {
 				return;
 			}
 			this.opened = true;
-			this.$set(this.cardStates, index, 'front');
+			this.$set(this.cardPaths, index, require(`./img/card_front${index}.webp`));
 			this.result = this.descriptions[this.cardIndices[index]];
 		},
 		reset: function() {
 			this.cardIndices = [0, 1, 2, 3, 4, 5].sort((a, b) => Math.random() - 0.5);
 			this.opened = false;
-			for (let i = 0; i < this.cardStates.length; ++i) {
-				this.$set(this.cardStates, i, 'back');
+			for (let i = 0; i < this.cardPaths.length; ++i) {
+				this.$set(this.cardPaths, i, require(`./img/card_back${this.cardIndices[i]}.webp`));
 			}
 		}
 	},
