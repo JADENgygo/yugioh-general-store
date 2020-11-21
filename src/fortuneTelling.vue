@@ -16,7 +16,6 @@
 export default {
 	data: function() {
 		return {
-			//frontCardPaths: [require('./img/card_front0.webp'), require('./img/card_front1.webp'), require('./img/card_front2.webp'), require('./img/card_front3.webp'), require('./img/card_front4.webp'), require('./img/card_front5.webp')],
 			cardPaths: [require('./img/card_back0.webp'), require('./img/card_back1.webp'), require('./img/card_back2.webp'), require('./img/card_back3.webp'), require('./img/card_back4.webp'), require('./img/card_back5.webp')],
 			cardIndices: [0, 1, 2, 3, 4, 5].sort((a, b) => Math.random() - 0.5),
 			opened: false,
@@ -62,7 +61,7 @@ export default {
 			}
 			this.opened = true;
 			this.$set(this.cardPaths, index, require(`./img/card_front${index}.webp`));
-			this.result = this.descriptions[this.cardIndices[index]];
+			this.result = this.descriptions[index];
 		},
 		reset: function() {
 			this.cardIndices = [0, 1, 2, 3, 4, 5].sort((a, b) => Math.random() - 0.5);
