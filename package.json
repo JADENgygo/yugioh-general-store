@@ -7,7 +7,7 @@
     "build:debug": "npm run copy && webpack --mode=development",
     "watch": "npm run copy && webpack --mode=development --watch",
     "start": "npm run copy && webpack serve --mode=development",
-    "copy": "mkdir dist & cp -r public/* dist"
+    "copy": "rm -rf dist && mkdir dist && cp -R public/* dist"
   },
   "private": true,
   "repository": {
@@ -32,7 +32,6 @@
     "babel-loader": "^8.2.1",
     "css-loader": "^5.0.1",
     "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^5.0.3",
     "url-loader": "^4.1.1",
     "vue-loader": "^15.9.5",
     "vue-template-compiler": "^2.6.12",
