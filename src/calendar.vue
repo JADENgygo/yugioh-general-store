@@ -93,3 +93,8 @@ export default {
 	}
 }
 </script>
+<style scoped>
+.today {
+    background-color: rgb(200, 255, 255);
+}
+</style>
