@@ -1,7 +1,6 @@
 import UIkit from 'uikit';
 import Icons from './uikit-icons';
 import './uikit.min.css';
-import './style.css';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import host from './host';

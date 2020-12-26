@@ -1,40 +1,34 @@
 <template>
 	<div class="uk-container">
-		<div class="uk-margin-bottom">
-			<label>
-				<div>デッキ枚数</div>
-				<select class="uk-select uk-form-width-small uk-form-small" v-model="deckCount">
+		<form class="uk-form-stacked">
+			<label class="uk-form-label" for="deck-number">デッキ枚数</label>
+			<div class="uk-form-controls">
+				<select class="uk-select uk-form-width-small uk-form-small" id="deck-number" v-model="deckCount">
 					<option v-for="i in 41">{{ 19 + i }}</option>
 				</select>
-			</label>
-		</div>
-		<div class="uk-margin-bottom">
-			<label>
-				<div>初期手札枚数</div>
-				<select class="uk-select uk-form-width-small uk-form-small" v-model="handCount">
+			</div>
+			<label class="uk-form-label uk-margin-top" for="hand-number">初期手札枚数</label>
+			<div class="uk-form-controls">
+				<select class="uk-select uk-form-width-small uk-form-small" id="hand-number" v-model="handCount">
 					<option>4</option>
 					<option>5</option>
 				</select>
-			</label>
-		</div>
-		<div class="uk-margin-bottom">
-			<label>
-				<div>キーカード枚数</div>
-				<select class="uk-select uk-form-width-small uk-form-small" v-model="keyCardCount">
+			</div>
+			<label class="uk-form-label uk-margin-top" for="key-card-number">キーカード枚数</label>
+			<div class="uk-form-controls">
+				<select class="uk-select uk-form-width-small uk-form-small" id="key-card-number" v-model="keyCardCount">
 					<option v-for="i in 60">{{ i }}</option>
 				</select>
-			</label>
-		</div>
-		<div class="uk-margin-bottom">
-			<label>
-				<div>ドローしたいキーカード最低枚数</div>
-				<select class="uk-select uk-form-width-small uk-form-small" v-model="expectedKeyCardCount">
+			</div>
+			<label class="uk-form-label uk-margin-top" for="expected-card-number">ドローしたいキーカード最低枚数</label>
+			<div class="uk-form-controls">
+				<select class="uk-select uk-form-width-small uk-form-small" id="expected-card-number" v-model="expectedKeyCardCount">
 					<option v-for="i in 60">{{ i }}</option>
 				</select>
-			</label>
-		</div>
-		<button class="uk-button uk-button-default uk-button-small uk-margin-bottom" v-on:click="calcProbability">計算</button>
-		<canvas id="canvas"></canvas>
+			</div>
+		</form>
+		<button class="uk-button uk-button-default uk-button-small uk-margin-top" v-on:click="calcProbability">計算</button>
+		<canvas class="uk-margin-top" id="canvas"></canvas>
 	</div>
 </template>
 <script>

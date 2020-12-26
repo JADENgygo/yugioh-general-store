@@ -10,7 +10,7 @@
 			</nav>
 			<div uk-grid class="uk-margin-top">
 				<div class="uk-width-auto uk-margin-left">
-					<ul class="uk-nav uk-nav-primary">
+					<ul class="uk-nav uk-nav-default">
 						<li class="uk-active"><a>ラインナップ</a></li>
 						<li v-bind:class="{'uk-active': active[0]}"><router-link to="/"><span uk-icon="home"></span> トップページ</router-link></li>
 						<li v-bind:class="{'uk-active': active[1]}"><router-link to="/calendar"><span uk-icon="calendar"></span> カレンダー</router-link></li>
@@ -39,7 +39,7 @@
 			<div id="navigation-menu" uk-offcanvas="overlay: true">
 				<div class="uk-offcanvas-bar">
 					<button class="uk-offcanvas-close" type="button" uk-close></button>
-					<ul class="uk-nav uk-nav-primary">
+					<ul class="uk-nav uk-nav-default">
 						<li class="uk-active"><a>ラインナップ</a></li>
 						<li v-bind:class="{'uk-active': active[0]}" v-on:click="closeNavigation()"><router-link to="/"><span uk-icon="home"></span> トップページ</router-link></li>
 						<li v-bind:class="{'uk-active': active[1]}" v-on:click="closeNavigation()"><router-link to="/calendar"><span uk-icon="calendar"></span> カレンダー</router-link></li>
